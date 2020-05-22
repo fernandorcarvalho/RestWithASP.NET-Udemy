@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "09exojYbkf/+xnJkcjKSHPb4djjm1TUZLb+7V0/2FuGPKBsC90mLA5CIJk/43K3A6NIQ+UyGhTzPWKGFw8tC6A==",
+  "dgSpecHash": "iPq6sdQ5H3NhsQsdQw04H9iceHWQzpLydg64TSodeG4QWmOSLTekzVfO++wFFbQlPZ9E8X87bnSP30mB4K4pog==",
   "success": true,
-  "projectFilePath": "D:\\_Usuarios\\Fernando\\Documentos\\_Estudo - Cursos\\Udemy\\RestAPIsNetCore\\Aulas\\RestWithASP.NET-Udemy\\RestWithASP.NETUdemy - Calculator\\RestWithASP.NETUdemy\\RestWithASP.NETUdemy.csproj",
+  "projectFilePath": "D:\\_Usuarios\\Fernando\\Documentos\\_Estudo - Cursos\\Udemy\\RestAPIsNetCore\\Aulas\\RestWithASP.NET-Udemy\\RestWithASP.NETUdemy - 01 -Calculator\\RestWithASP.NETUdemy\\RestWithASP.NETUdemy.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ferna\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\_Usuarios\\Fernando\\Documentos\\_Estudo - Cursos\\Udemy\\RestAPIsNetCore\\Aulas\\RestWithASP.NET-Udemy\\RestWithASP.NETUdemy - Calculator\\RestWithASP.NETUdemy\\RestWithASP.NETUdemy.csproj",
+      "projectUniqueName": "D:\\_Usuarios\\Fernando\\Documentos\\_Estudo - Cursos\\Udemy\\RestAPIsNetCore\\Aulas\\RestWithASP.NET-Udemy\\RestWithASP.NETUdemy - 01 -Calculator\\RestWithASP.NETUdemy\\RestWithASP.NETUdemy.csproj",
       "projectName": "RestWithASP.NETUdemy",
-      "projectPath": "D:\\_Usuarios\\Fernando\\Documentos\\_Estudo - Cursos\\Udemy\\RestAPIsNetCore\\Aulas\\RestWithASP.NET-Udemy\\RestWithASP.NETUdemy - Calculator\\RestWithASP.NETUdemy\\RestWithASP.NETUdemy.csproj",
+      "projectPath": "D:\\_Usuarios\\Fernando\\Documentos\\_Estudo - Cursos\\Udemy\\RestAPIsNetCore\\Aulas\\RestWithASP.NET-Udemy\\RestWithASP.NETUdemy - 01 -Calculator\\RestWithASP.NETUdemy\\RestWithASP.NETUdemy.csproj",
       "packagesPath": "C:\\Users\\ferna\\.nuget\\packages\\",
-      "outputPath": "D:\\_Usuarios\\Fernando\\Documentos\\_Estudo - Cursos\\Udemy\\RestAPIsNetCore\\Aulas\\RestWithASP.NET-Udemy\\RestWithASP.NETUdemy - Calculator\\RestWithASP.NETUdemy\\obj\\",
+      "outputPath": "D:\\_Usuarios\\Fernando\\Documentos\\_Estudo - Cursos\\Udemy\\RestAPIsNetCore\\Aulas\\RestWithASP.NET-Udemy\\RestWithASP.NETUdemy - 01 -Calculator\\RestWithASP.NETUdemy\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
