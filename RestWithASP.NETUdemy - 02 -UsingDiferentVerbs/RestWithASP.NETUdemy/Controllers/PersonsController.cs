@@ -4,13 +4,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using RestWithASP.NETUdemy.Services.Implementation;
 
 namespace RestWithASP.NETUdemy.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CalculatorController : ControllerBase
+    public class PersonsController : ControllerBase
     {
+        private IPersonService _personService;
+
+
         [HttpGet("Sum/{firstNumber}/{secondNumber}")]
         public IActionResult Sum(string firstNumber, string secondNumber)
         {
