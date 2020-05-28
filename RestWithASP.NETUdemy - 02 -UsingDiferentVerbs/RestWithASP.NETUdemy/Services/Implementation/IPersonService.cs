@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RestWithASP.NETUdemy.Services.Implementation
 {
-    interface IPersonService
+    public interface IPersonService
     {
         Person Create(Person person);
 
