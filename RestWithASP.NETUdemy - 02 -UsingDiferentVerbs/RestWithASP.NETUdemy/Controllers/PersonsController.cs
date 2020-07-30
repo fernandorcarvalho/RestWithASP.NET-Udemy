@@ -14,7 +14,8 @@ namespace RestWithASP.NETUdemy.Controllers
     // pegando a primeira parte do nome da classe em lower case [Persons] Controller
     // e expôe como endpoint REST.
     [ApiController]
-    [Route("api/[controller]")]
+    [ApiVersion("1")]
+    [Route("api/[controller]/v{version:apiVersion}")]
     public class PersonsController : ControllerBase
     {
         // Declaração do serviço usado

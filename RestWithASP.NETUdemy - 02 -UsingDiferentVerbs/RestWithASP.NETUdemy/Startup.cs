@@ -31,6 +31,8 @@ namespace RestWithASP.NETUdemy
             services.AddDbContext<Model.Context.MySqlContext>(options => options.UseMySql(connection));
 
             services.AddControllers();
+
+            services.AddApiVersioning();
              
             // Dependecy Injection
             services.AddScoped<IPersonService, PersonServiceImpl>();
