@@ -1,22 +1,21 @@
 ﻿using RestWithASP.NETUdemy.Controllers.Model;
+using RestWithASP.NETUdemy.Model.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
+using System.Threading.Tasks;
 
-namespace RestWithASP.NETUdemy.Services.Implementation
+namespace RestWithASP.NETUdemy.Repository.Implementation
 {
-    public class PersonServiceImpl : IPersonService
+    public class PersonRepositoryImpl : IPersonRepository
     {
-        private Model.Context.MySqlContext _context;
+        private MySqlContext _context;
 
-        public PersonServiceImpl(Model.Context.MySqlContext context)
+        public PersonRepositoryImpl(MySqlContext context)
         {
             _context = context;
         }
 
-        // Método responsável por criar uma nova pessoa
-        // Se tivéssemos um banco de dados esse seria o momento de persistir os dados
         public Person Create(Person person)
         {
             try
@@ -24,7 +23,7 @@ namespace RestWithASP.NETUdemy.Services.Implementation
                 _context.Add(person);
                 _context.SaveChanges();
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -32,10 +31,9 @@ namespace RestWithASP.NETUdemy.Services.Implementation
             return person;
         }
 
-        // Método responsável por deletar o resgistro de uma pessoa a partir do ID
-        public void Delete(long Id)
+        public void Delete(long id)
         {
-            var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(Id));
+            var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
 
             try
             {
@@ -43,30 +41,30 @@ namespace RestWithASP.NETUdemy.Services.Implementation
                 {
                     _context.Persons.Remove(result);
                     _context.SaveChanges();
-                }_context.SaveChanges();                
+                }
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        
-        // Método responsável por retornar todas as pessoas
-        // nesta implemtnação os dados estão mockados
+
+        public bool Exists(long? id)
+        {
+            return _context.Persons.Any(p => p.Id.Equals(id));
+        }
+
         public List<Person> FindAll()
         {
             return _context.Persons.ToList();
         }
 
-        // Método responsável por retornar uma pessoa
-        // como esse teste é mockado o retorno está fixo
-        public Person FindById(long Id)
+        public Person FindById(long id)
         {
-            return _context.Persons.SingleOrDefault(p => p.Id.Equals(Id));
+            return _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
         }
 
-        // Método responsável por atualizar uma pessoa
-        // por ser mock retornamos a mesma informação passada
         public Person Update(Person person)
         {
             // Verifica se a pessoa nâo existe no banco de dados.
@@ -86,11 +84,6 @@ namespace RestWithASP.NETUdemy.Services.Implementation
             }
 
             return person;
-        }
-
-        private bool Exists(long? id)
-        {
-            return _context.Persons.Any(p => p.Id.Equals(id));
         }
     }
 }

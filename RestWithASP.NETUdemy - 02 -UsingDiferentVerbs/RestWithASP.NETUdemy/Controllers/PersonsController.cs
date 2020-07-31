@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RestWithASP.NETUdemy.Controllers.Model;
-using RestWithASP.NETUdemy.Services.Implementation;
+using RestWithASP.NETUdemy.Business.Implementation;
 
 namespace RestWithASP.NETUdemy.Controllers
 {
@@ -19,12 +19,12 @@ namespace RestWithASP.NETUdemy.Controllers
     public class PersonsController : ControllerBase
     {
         // Declaração do serviço usado
-        private IPersonService _personService;
+        private IPersonBusiness _personBusiness;
 
-        // Injeção de uma instância de IPersonService ao criar uma instância de PersonsController
-        public PersonsController(IPersonService personService)
+        // Injeção de uma instância de IPersonBusiness ao criar uma instância de PersonsController
+        public PersonsController(IPersonBusiness personBusiness)
         {
-            _personService = personService;
+            _personBusiness = personBusiness;
         }
 
         // Mapeia as requisições para http://localhost:{porta}/api/persons
@@ -32,7 +32,7 @@ namespace RestWithASP.NETUdemy.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_personService.FindAll());
+            return Ok(_personBusiness.FindAll());
         }
 
         // Mapeia as requisições GET para http://localhost:{porta}/api/persons/{id}
@@ -41,7 +41,7 @@ namespace RestWithASP.NETUdemy.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            var person = _personService.FindById(id);
+            var person = _personBusiness.FindById(id);
             if (person == null) return NotFound();
             return Ok(person);
         }
@@ -52,7 +52,7 @@ namespace RestWithASP.NETUdemy.Controllers
         public IActionResult Post([FromBody] Person value)
         {
             if (value == null) return BadRequest();
-            return new ObjectResult(_personService.Create(value));
+            return new ObjectResult(_personBusiness.Create(value));
         }
 
         // Mapeia as requisições PUT para http://localhost:{porta}/api/persons
@@ -61,7 +61,7 @@ namespace RestWithASP.NETUdemy.Controllers
         public IActionResult Put([FromBody] Person value)
         {
             if (value == null) return BadRequest();
-            return new ObjectResult(_personService.Update(value));
+            return new ObjectResult(_personBusiness.Update(value));
         }
 
         // Mapeia as requisições DELETE para http://localhost:{porta}/api/persons/{id}
@@ -69,7 +69,7 @@ namespace RestWithASP.NETUdemy.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            _personService.Delete(id);
+            _personBusiness.Delete(id);
             return NoContent();
         }
 
