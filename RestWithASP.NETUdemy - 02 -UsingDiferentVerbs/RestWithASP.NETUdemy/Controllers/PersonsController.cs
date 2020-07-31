@@ -61,7 +61,9 @@ namespace RestWithASP.NETUdemy.Controllers
         public IActionResult Put([FromBody] Person value)
         {
             if (value == null) return BadRequest();
-            return new ObjectResult(_personBusiness.Update(value));
+            var updatedPerson = _personBusiness.Update(value);
+            if (updatedPerson == null) return NoContent();
+            return new ObjectResult(updatedPerson);
         }
 
         // Mapeia as requisições DELETE para http://localhost:{porta}/api/persons/{id}

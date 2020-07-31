@@ -68,8 +68,7 @@ namespace RestWithASP.NETUdemy.Repository.Implementation
         public Person Update(Person person)
         {
             // Verifica se a pessoa nâo existe no banco de dados.
-            if (!Exists(person.Id))
-                return new Person();
+            if (!Exists(person.Id)) return null;
 
             var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(person.Id));
 
