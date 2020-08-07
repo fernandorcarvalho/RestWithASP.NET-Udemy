@@ -17,5 +17,6 @@ namespace RestWithASP.NETUdemy.Business.Implementation
         Person Update(Person person);
 
         void Delete(long Id);
+
     }
 }
