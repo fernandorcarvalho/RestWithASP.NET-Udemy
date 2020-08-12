@@ -11,8 +11,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using RestWithASP.NETUdemy.Business;
 using RestWithASP.NETUdemy.Business.Implementation;
 using RestWithASP.NETUdemy.Repository;
+using RestWithASP.NETUdemy.Repository.Generic;
 using RestWithASP.NETUdemy.Repository.Implementation;
 
 namespace RestWithASP.NETUdemy
@@ -45,7 +47,7 @@ namespace RestWithASP.NETUdemy
 
                     var evolve = new Evolve.Evolve(evolveConnection, msg => _logger.LogInformation(msg))
                     {
-                        Locations = new List<string> { "db/migrations" },
+                        Locations = new List<string> { "db/migrations", "db/dataset" },
                         IsEraseDisabled = true
                     };
 
@@ -61,9 +63,12 @@ namespace RestWithASP.NETUdemy
             services.AddControllers();
 
             services.AddApiVersioning();
-             
+
             // Dependecy Injection
+            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
+
             services.AddScoped<IPersonBusiness, PersonBusinessImpl>();
+            services.AddScoped<IBookBusiness, BookBusinessImpl>();
             services.AddScoped<IPersonRepository, PersonRepositoryImpl>();
         }
 

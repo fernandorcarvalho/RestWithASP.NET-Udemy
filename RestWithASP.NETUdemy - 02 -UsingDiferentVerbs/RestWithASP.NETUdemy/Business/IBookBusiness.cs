@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestWithASP.NETUdemy.Controllers.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,12 +10,12 @@ namespace RestWithASP.NETUdemy.Business
     {
         Book Create(Book book);
 
-        Book FindById(string Id);
+        Book FindById(long Id);
 
         List<Book> FindAll();
 
         Book Update(Book book);
 
-        void Delete(string Id);
+        void Delete(long Id);
     }
 }

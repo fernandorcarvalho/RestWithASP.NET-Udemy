@@ -1,4 +1,5 @@
 ﻿using RestWithASP.NETUdemy.Controllers.Model;
+using RestWithASP.NETUdemy.Repository.Generic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,35 +9,36 @@ namespace RestWithASP.NETUdemy.Business.Implementation
 {
     public class BookBusinessImpl : IBookBusiness
     {
+        private readonly IRepository<Book> _repository;
 
-        public BookBusinessImpl ()
+        public BookBusinessImpl (IRepository<Book> repository)
         {
-
+            _repository = repository;
         }
 
         public Book Create(Book book)
         {
-            throw new NotImplementedException();
+            return _repository.Create(book);
         }
 
-        public void Delete(string Id)
+        public void Delete(long Id)
         {
-            throw new NotImplementedException();
+            _repository.Delete(Id);
         }
 
         public List<Book> FindAll()
         {
-            throw new NotImplementedException();
+            return _repository.FindAll();
         }
 
-        public Book FindById(string Id)
+        public Book FindById(long Id)
         {
-            throw new NotImplementedException();
+            return _repository.FindById(Id);
         }
 
         public Book Update(Book book)
         {
-            throw new NotImplementedException();
+            return _repository.Update(book);
         }
     }
 }
