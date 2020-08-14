@@ -1,5 +1,6 @@
 ﻿using RestWithASP.NETUdemy.Controllers.Model;
 using RestWithASP.NETUdemy.Repository;
+using RestWithASP.NETUdemy.Repository.Generic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,9 @@ namespace RestWithASP.NETUdemy.Business.Implementation
 {
     public class PersonBusinessImpl : IPersonBusiness
     {
-        private IPersonRepository _repository;
+        private IRepository<Person> _repository;
 
-        public PersonBusinessImpl(IPersonRepository repository)
+        public PersonBusinessImpl(IRepository<Person> repository)
         {
             _repository = repository;
         }

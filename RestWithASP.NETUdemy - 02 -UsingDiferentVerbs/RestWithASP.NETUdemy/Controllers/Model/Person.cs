@@ -1,13 +1,14 @@
-﻿using System;
+﻿using RestWithASP.NETUdemy.Model.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace RestWithASP.NETUdemy.Controllers.Model
 {
-    public class Person
+    public class Person : BaseEntity
     {
-        public long? Id { get; set; }
+        //public long? Id { get; set; }
 
         public string FirstName { get; set; }
 
